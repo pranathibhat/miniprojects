@@ -10,20 +10,29 @@ class ToDoList:
     def mark_done():
         print()
         y=input("Enter the task done : ")
-        done.append(y)
-        to_do.remove(y)
+        if y in to_do:
+            done.append(y)
+            to_do.remove(y)
+        else:
+            print("Enter the task in the list")
 
     def task_rem():
         print()
         print('The tasks remaining are : ')
-        for z in to_do:
-            print(z)
+        if to_do==[]:
+            print("There are no tasks to be done")
+        else:
+             y=[i for i in to_do]
+             print(y)
 
     def task_done():
         print()
         print('The tasks completed are : ')
-        for z in done:
-            print(z)
+        if done==[]:
+            print("There are no tasks done")
+        else:
+             y=[i for i in done]
+             print(y)
 
 def main():
     
@@ -45,3 +54,4 @@ def main():
 
 
 main()
+
