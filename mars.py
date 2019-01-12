@@ -7,17 +7,28 @@ class MarsMissionDetector:
 
     def calculate(self):
         """Here based on the distance travelled remaining distance needed to travel to mars is calculated"""
-        self.remaining= 54.6- self.distance
-        print('The remaining distance to be travelled is %f million kilometers:'%self.remaining)
-        self.d={self.distance:self.remaining}
-        """It is represented in the form of dictionary where key is represented by distance already travelled and value is remaining distance"""
-        print(self.d)
+        if self.distance<54.6:
+            self.remaining= 54.6- self.distance
+            self.d={self.distance*1000000:self.remaining*1000000}
+            """It is represented in the form of dictionary where key is represented by distance already travelled and value is remaining distance"""
+            print(self.d)
+            print('The remaining distance to be travelled is %f million kilometers:'%self.remaining)
+        else:
+            print("Enter correct distance")
+        
 
 def main():
-    """This is the function which calls the class by its object and gives the value for distance travelled which is taken by the user as input"""
-    x=int(input("Enter the distance travelled already:"))
-    y=MarsMissionDetector(x)
-    y.calculate()
+
+    while True:
+        print("Enter 1 to calculate distance:")
+        a=input()
+        if int(a)==1:
+            """This is the function which calls the class by its object and gives the value for distance travelled which is taken by the user as input"""
+            x=int(input("Enter the distance travelled already:"))
+            y=MarsMissionDetector(x)
+            y.calculate()
+        else:
+            break
 
 main()
 
