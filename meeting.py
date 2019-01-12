@@ -1,23 +1,31 @@
+dictionary_name={1:"9 am",2:"11 am",3:"12.30pm",4:"3pm",5:"7pm",6:"9pm"}
+new_dic={}
 class Meeting:
+    def time_view():
+        mine=int(input("Enter time slot"))
+        if mine in dictionary_name.keys():
+            new_dic.update({mine:dictionary_name[mine]})
+            del dictionary_name[mine]
+        else:
+            print("Enter proper time slot")
+        return new_dic
+    def free():
+        return dictionary_name
 
-    def __init__(self,key):
-    	
-    	self.dictionary_name={1:"9 am",2:"11 am",3:"12.30pm",4:"3pm",5:"7pm",6:"9pm"}
-    	self.key=key
-    	self.new_dic={}
+                
 
-    def time_view(self):
-    	mine=int(input())
-    	for i in self.dictionary_name.keys():
-            if(mine==i):
-                self.new_dic.update({i:self.dictionary_name[i]})
-                del self.dictionary_name[i]
-    	    else:
-    		print("Enter proper time slot")
-    	return self.new_dic
+def main():
+    while True:
+        print("1. alot 2. remaining 3.exit")
+        a=int(input("Enter:"))
+        if a==1:
+            x=Meeting.time_view()
+            print("Alotted slot is :",x)
+        elif a==2:
+            y=Meeting.free()
+            print("Free slots are:",y)
+        else:
+            break
 
-
-a=Meeting(3)
-b=a.time_view()
-print(b)
-
+main()
+            
