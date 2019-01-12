@@ -1,34 +1,47 @@
-class Todo:
+to_do=[]
+done=[]
+class ToDoList:
 
-    def __init__(self,list_name,to_do,done):
+    def add():
+            print()
+            x=input("Enter the task to add : ")
+            to_do.append(x)
+         
+    def mark_done():
+        print()
+        y=input("Enter the task done : ")
+        done.append(y)
+        to_do.remove(y)
 
-        self.list_name=list_name
-        self.to_do=to_do
-        self.done=done
+    def task_rem():
+        print()
+        print('The tasks remaining are : ')
+        for z in to_do:
+            print(z)
 
-    def add(self):
+    def task_done():
+        print()
+        print('The tasks completed are : ')
+        for z in done:
+            print(z)
 
-        self.ToDoList=[]
-        self.list_name=input("Enter the list name:")
-        self.n=int(input("Enter the number of tasks:")
-        for i in range(self.n):
-            self.Task=input("Enter the task:")
-            self.ToDoList.append(Task)
-        return self.ToDoList
+def main():
+    
+ print()
+ while True:
 
-    def mark_done(self):
-
-        self.done=input("Enter the task that is done:")
-
-        for i in self.ToDoList:
-
-            if i==self.done:
-
-                
-            
-        
+    print("1.Add task  2.Mark done  3.Tasks remaining  4.Tasks done  5.exit")
+    opt=int(input("Enter option : "))
+    if opt==1:
+        ToDoList.add()
+    elif opt==2:
+        ToDoList.mark_done()
+    elif opt==3:
+        ToDoList.task_rem()
+    elif opt==4:
+        ToDoList.task_done()
+    else:
+        break
 
 
-
-
-        
+main()
